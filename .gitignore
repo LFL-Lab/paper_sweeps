@@ -28,8 +28,9 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows
-
+project_storage/*
 *.csv
+project_storage/*.*
 *.aedt
 *.aedtresults
 *.asol
