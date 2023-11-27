@@ -1,0 +1,120 @@
+ 
+ANSYS Electronics Desktop Version 2021.1.0, Build: 2020-11-16 21:49:12
+Location: D:\Program Files\AnsysEM\AnsysEM21.1\Win64\ansysedt.exe
+Batch Solve/Save: d:\andre\paper_sweeps\project_storage\clt_sweep_3970um_120um.aedt
+Starting Batch Run: 9:20:12 PM  Nov 09, 2023
+Running as user: DTS\lfl
+Temp directory: D:\lfl\AppData\Local\Temp
+Project directory: D:\lfl\Documents\Ansoft
+Simulation settings:
+
+Design type: HFSS
+Allow off core: True
+Using automatic settings
+16 optimetrics variations will be solved simultaneously.
+Partitions:
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+
+Machines:
+localhost RAM: 90%, 16 cores, 1 GPUs
+
+[info] Using command line: "D:\Program Files\AnsysEM\AnsysEM21.1\Win64\ansysedt.exe -jobid RSM_365 -distributed -machinelist list=localhost:-1:16:90%:1 -auto NumDistributedVariations=16 -monitor -waitforlicense -useelectronicsppe -ng -batchoptions  'HFSS/AllowOffCore'=1 'HFSS/DefaultProcessPriority'='Normal' 'HFSS/EnableGPU'=0 'HFSS/EnableGPUForSBR'=1 'HFSS/MPIVendor'='Intel' 'HFSS/RemoteSpawnCommand'='SSH' -batchsolve d:\andre\paper_sweeps\project_storage\clt_sweep_3970um_120um.aedt".
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Solution Process : Time:  11/09/2023 21:20:18; Host: DTS-MJ0GK06Y; Processor: 32; OS: NT 10.0; HFSS Version 2021.1.0 (9:20:18 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Executing from D:\Program Files\AnsysEM\AnsysEM21.1\Win64\HFSSCOMENGINE.exe (9:20:18 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        HPC Enabled (9:20:18 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Allow off core: True (9:20:18 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Using automatic settings (9:20:18 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Machines: (9:20:18 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        DTS-MJ0GK06Y [128 GB]: RAM Limit: 90.000000%, 16 cores (9:20:18 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Solution Basis Order: Mixed (9:20:18 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Design Validation : Elapsed time : 00:00:00 , HFSS ComEngine Memory : 140 M (9:20:18 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Perform full validations with standard port validations (9:20:18 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Initial Meshing : Time:  11/09/2023 21:20:18 (9:20:18 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Volume (9:20:18 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Mesh Phi : Real Time 00:00:00 : CPU Time 00:00:00 : Memory 69.9 M : 2042 tetrahedra (9:20:18 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Mesh Post : Real Time 00:00:00 : CPU Time 00:00:00 : Memory 71.3 M : 2724 tetrahedra (9:20:19 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Mesh Refinement : Manual Seed Based (9:20:19 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Mesh (volume, seed) : Real Time 00:02:06 : CPU Time 00:02:06 : Memory 653 M : 585642 tetrahedra (9:22:25 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Mesh Refinement : Lambda Based (9:22:25 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Mesh (lambda based) : Real Time 00:00:19 : CPU Time 00:00:19 : Memory 453 M : 588089 tetrahedra (9:22:45 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        port_mesh, mesh1, mesh_ground_strip (9:22:46 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Initial Meshing : Elapsed time: 00:02:27 (9:22:46 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Adaptive Meshing : Time:  11/09/2023 21:22:46 (9:22:46 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Adaptive Pass 1 : Eigenmode Solution (9:22:46 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Simulation Setup : Real Time 00:00:12 : CPU Time 00:00:12 : Memory 913 M : Disk = 0 Bytes (9:22:59 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Matrix Assembly : Real Time 00:00:11 : CPU Time 00:00:14 : Memory 1.37 G : Disk = 0 Bytes, 588089 tetrahedra  (9:23:11 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] EigenSolver DCS16 : Real Time 00:00:21 : CPU Time 00:02:38 : Memory 3.86 G : Disk = 9.87 MB, matrix size 647116, matrix bandwidth   8.4, 18 eigen iterations (9:23:32 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Field Recovery : Real Time 00:00:07 : CPU Time 00:00:22 : Memory 3.86 G : Disk = 212 MB, 1 computed eigenmodes, Average Order 0.004147 (9:23:39 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [CONVERGE] Pass Number:  1;  Solved Elements:  588089;  Max Delta Freq. %:  N/A;   (9:23:40 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Adaptive Pass 2 : Eigenmode Solution (9:23:40 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Mesh (volume, adaptive) : Real Time 00:00:40 : CPU Time 00:00:40 : Memory 579 M : 702431 tetrahedra (9:24:20 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Simulation Setup : Real Time 00:00:20 : CPU Time 00:00:20 : Memory 1.06 G : Disk = 0 Bytes (9:24:42 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Matrix Assembly : Real Time 00:00:30 : CPU Time 00:00:33 : Memory 2.49 G : Disk = 0 Bytes, 702431 tetrahedra  (9:25:13 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] EigenSolver DCS16 : Real Time 00:01:02 : CPU Time 00:05:35 : Memory 8.25 G : Disk = 9.23 MB, matrix size 1252004, matrix bandwidth  13.9, 17 eigen iterations (9:26:15 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Field Recovery : Real Time 00:00:10 : CPU Time 00:00:30 : Memory 8.25 G : Disk = 52.6 MB, 1 computed eigenmodes, Average Order 0.102656 (9:26:26 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Max Delta Freq. % = 7.52097 at adaptive pass 2 (9:26:26 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [CONVERGE] Pass Number:  2;  Solved Elements:  702431;  Max Delta Freq. %:  7.521;   (9:26:26 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Adaptive Pass 3 : Eigenmode Solution (9:26:26 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Mesh (volume, adaptive) : Real Time 00:00:26 : CPU Time 00:00:26 : Memory 558 M : 731842 tetrahedra (9:26:52 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Simulation Setup : Real Time 00:00:20 : CPU Time 00:00:20 : Memory 1.11 G : Disk = 0 Bytes (9:27:13 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Matrix Assembly : Real Time 00:00:47 : CPU Time 00:00:49 : Memory 3.2 G : Disk = 0 Bytes, 731842 tetrahedra  (9:28:00 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] EigenSolver DCS16 : Real Time 00:01:46 : CPU Time 00:08:57 : Memory 11.7 G : Disk = 5.66 MB, matrix size 1622825, matrix bandwidth  15.8, 17 eigen iterations (9:29:46 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Field Recovery : Real Time 00:00:10 : CPU Time 00:00:31 : Memory 11.7 G : Disk = 24.2 MB, 1 computed eigenmodes, Average Order 0.178466 (9:29:57 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Max Delta Freq. % = 0.65126 at adaptive pass 3 (9:29:57 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [CONVERGE] Pass Number:  3;  Solved Elements:  731842;  Max Delta Freq. %:  0.65126;   (9:29:58 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Adaptive Pass 4 : Eigenmode Solution (9:29:58 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Mesh (volume, adaptive) : Real Time 00:00:45 : CPU Time 00:00:45 : Memory 680 M : 841618 tetrahedra (9:30:43 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Simulation Setup : Real Time 00:00:23 : CPU Time 00:00:23 : Memory 1.26 G : Disk = 0 Bytes (9:31:07 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Matrix Assembly : Real Time 00:01:21 : CPU Time 00:01:08 : Memory 4.87 G : Disk = 0 Bytes, 841618 tetrahedra  (9:32:29 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] EigenSolver DCS16 : Real Time 00:03:20 : CPU Time 00:18:11 : Memory 20.3 G : Disk = 13.7 MB, matrix size 2520063, matrix bandwidth  18.0, 17 eigen iterations (9:35:49 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Field Recovery : Real Time 00:00:10 : CPU Time 00:00:32 : Memory 20.3 G : Disk = 53.8 MB, 1 computed eigenmodes, Average Order 0.317805 (9:35:59 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Max Delta Freq. % = 0.29746 at adaptive pass 4 (9:35:59 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [CONVERGE] Pass Number:  4;  Solved Elements:  841618;  Max Delta Freq. %:  0.29746;   (9:36:00 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Adaptive Pass 5 : Eigenmode Solution (9:36:00 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Mesh (volume, adaptive) : Real Time 00:00:51 : CPU Time 00:00:51 : Memory 779 M : 967866 tetrahedra (9:36:51 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Simulation Setup : Real Time 00:00:43 : CPU Time 00:00:43 : Memory 1.45 G : Disk = 0 Bytes (9:37:35 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Matrix Assembly : Real Time 00:01:48 : CPU Time 00:01:48 : Memory 6.52 G : Disk = 0 Bytes, 967866 tetrahedra  (9:39:24 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] EigenSolver DCS16 : Real Time 00:06:00 : CPU Time 00:29:37 : Memory 25.2 G : Disk = 13 MB, matrix size 3370731, matrix bandwidth  18.9, 18 eigen iterations (9:45:25 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Field Recovery : Real Time 00:00:14 : CPU Time 00:00:46 : Memory 25.2 G : Disk = 62 MB, 1 computed eigenmodes, Average Order 0.413571 (9:45:39 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Max Delta Freq. % = 0.09858 at adaptive pass 5 (9:45:39 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [CONVERGE] Pass Number:  5;  Solved Elements:  967866;  Max Delta Freq. %:  0.09858;   (9:45:39 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Adaptive Passes converged (9:45:39 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Adaptive Meshing : Elapsed time: 00:22:53 (9:45:39 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Simulation Summary: (9:45:39 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Design Validation : Elapsed time: 00:00:00, total memory: 140 MB (9:45:39 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Initial Meshing : Elapsed time: 00:02:27, total memory: 653 MB (9:45:39 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Adaptive Meshing : Elapsed time: 00:22:53, total memory: 25.2 GB, total number of cores: 16 (9:45:39 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        max solved tets: 967866, max matrix size: 3370731, max bandwidth:  18.9 (9:45:39 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Time:  11/09/2023 21:45:39, Status: Normal Completion (9:45:39 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Stop : Elapsed time : 00:25:21 , ComEngine Memory : 141 M (9:45:39 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Design:CavitySweep_hfss (Eigenmode), Normal completion of simulation on server: Local Machine. (9:45:40 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Solution Process : Time:  11/09/2023 21:45:43; Host: DTS-MJ0GK06Y; Processor: 32; OS: NT 10.0; HFSS Version 2021.1.0 (9:45:43 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Executing from D:\Program Files\AnsysEM\AnsysEM21.1\Win64\HFSSCOMENGINE.exe (9:45:43 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        HPC Enabled (9:45:43 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Allow off core: True (9:45:43 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Using automatic settings (9:45:43 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Machines: (9:45:43 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        DTS-MJ0GK06Y [128 GB]: RAM Limit: 90.000000%, 16 cores (9:45:43 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Solution Basis Order: Mixed (9:45:43 PM  Nov 09, 2023)
+[error] Project:clt_sweep_3970um_120um, Design:CavitySweep (Eigenmode), There are no objects in the design. (9:45:43 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Design Validation : Elapsed time : 00:00:00 , HFSS ComEngine Memory : 127 M (9:45:43 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Perform full validations with standard port validations (9:45:43 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE]        Time:  11/09/2023 21:45:43, Status: Engine Detected Error (9:45:43 PM  Nov 09, 2023)
+[info] Project:clt_sweep_3970um_120um, Setup : [PROFILE] Stop : Elapsed time : 00:00:00 , ComEngine Memory : 127 M (9:45:43 PM  Nov 09, 2023)
+[error] Project:clt_sweep_3970um_120um, Design:CavitySweep (Eigenmode), Simulation completed with execution error on server: Local Machine. (9:45:45 PM  Nov 09, 2023)
+Stopping Batch Run: 9:45:52 PM  Nov 09, 2023

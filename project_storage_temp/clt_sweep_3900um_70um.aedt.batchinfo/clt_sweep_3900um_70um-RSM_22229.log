@@ -1,0 +1,53 @@
+ 
+ANSYS Electronics Desktop Version 2021.1.0, Build: 2020-11-16 21:49:12
+Location: D:\Program Files\AnsysEM\AnsysEM21.1\Win64\ansysedt.exe
+Batch Solve/Save: D:\andre\paper_sweeps\project_storage\clt_sweep_3900um_70um.aedt
+Starting Batch Run: 7:42:57 PM  Nov 14, 2023
+Running as user: DTS\lfl
+Temp directory: D:\lfl\AppData\Local\Temp
+Project directory: D:\lfl\Documents\Ansoft
+Simulation settings:
+
+Design type: HFSS
+Allow off core: True
+Using automatic settings
+16 optimetrics variations will be solved simultaneously.
+Partitions:
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+Machine: localhost, Cores: 1, GPUs: 0, GPU Indexes:<>, RAM pct: 5.625000
+
+Machines:
+localhost RAM: 90%, 16 cores, 1 GPUs
+
+[info] Using command line: "D:\Program Files\AnsysEM\AnsysEM21.1\Win64\ansysedt.exe -jobid RSM_22229 -distributed -machinelist list=localhost:-1:16:90%:1 -auto NumDistributedVariations=16 -monitor -useelectronicsppe -ng -batchoptions  'HFSS/AllowOffCore'=1 'HFSS/DefaultProcessPriority'='Normal' 'HFSS/EnableGPU'=1 'HFSS/EnableGPUForSBR'=1 'HFSS/MPIVendor'='Intel' 'HFSS/RemoteSpawnCommand'='SSH' -batchsolve CavitySweep_hfss:Nominal:Setup D:\andre\paper_sweeps\project_storage\clt_sweep_3900um_70um.aedt".
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE] Solution Process : Time:  11/14/2023 19:43:02; Host: DTS-MJ0GK06Y; Processor: 32; OS: NT 10.0; HFSS Version 2021.1.0 (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE]        Executing from D:\Program Files\AnsysEM\AnsysEM21.1\Win64\HFSSCOMENGINE.exe (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE]        HPC Enabled (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE]        Allow off core: True (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE]        Using automatic settings (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE]        Machines: (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE]        DTS-MJ0GK06Y [128 GB]: RAM Limit: 90.000000%, 16 cores (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE]        Solution Basis Order: Mixed (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE] Design Validation : Elapsed time : 00:00:00 , HFSS ComEngine Memory : 133 M (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE]        Perform full validations with standard port validations (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE]        Adaptive Passes converged (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE] Simulation Summary: (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE] Design Validation : Elapsed time: 00:00:00, total memory: 133 MB (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE]        Time:  11/14/2023 19:43:02, Status: Normal Completion (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Setup : [PROFILE] Stop : Elapsed time : 00:00:00 , ComEngine Memory : 134 M (7:43:02 PM  Nov 14, 2023)
+[info] Project:clt_sweep_3900um_70um, Design:CavitySweep_hfss (Eigenmode), Normal completion of simulation on server: Local Machine. (7:43:03 PM  Nov 14, 2023)
+Stopping Batch Run: 7:43:11 PM  Nov 14, 2023
