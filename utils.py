@@ -16,7 +16,7 @@ from qiskit_metal.qlibrary.tlines.mixed_path import RouteMixed
 from qiskit_metal.qlibrary.qubits.transmon_cross import TransmonCross
 from qiskit_metal.qlibrary.tlines.meandered import RouteMeander
 from qiskit_metal.qlibrary.terminations.open_to_ground import OpenToGround
-from qiskit_metal.qlibrary.couplers.coupled_line_tee import CoupledLineTee
+from coupled_line_tee import CoupledLineTee
 from qiskit_metal.qlibrary.couplers.cap_n_interdigital_tee import CapNInterdigitalTee
 from qiskit_metal.qlibrary.couplers.line_tee import LineTee
 
