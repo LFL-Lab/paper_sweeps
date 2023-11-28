@@ -12,7 +12,7 @@ from datetime import datetime
 
 class SimulationConfig:
     def __init__(self, design_name="CavitySweep", renderer_type="hfss", sim_type="eigenmode",
-                 setup_name="Setup", max_passes=50, max_delta_f=0.05, min_converged_passes=2, Lj=0, Cj=0,uid=None):
+                 setup_name="Setup", max_passes=50, max_delta_f=0.05, min_converged_passes=2, Lj=0, Cj=0,uid=None,comp_id="LFL"):
         self.design_name = design_name
         self.renderer_type = renderer_type
         self.sim_type = sim_type
@@ -23,8 +23,9 @@ class SimulationConfig:
         self.Lj = Lj
         self.Cj = Cj
         self.uid = uid
+        self.comp_id = comp_id
 
-def CLT_epr_sweep(design, sweep_opts, project_path):   
+def CLT_epr_sweep(design, sweep_opts, project_path, comp_id="LFL"):   
     
     create_project_path(project_path)
 
@@ -49,7 +50,7 @@ def CLT_epr_sweep(design, sweep_opts, project_path):
         # Combine uid_base with datetime_stamp
         #uid = f"{uid_base}_{datetime_stamp}"
 
-        config = SimulationConfig(uid=uid_base)
+        config = SimulationConfig(uid=uid_base,comp_id=comp_id)
         epra, hfss = start_simulation(design, config, project_path)
         setup = set_simulation_hyperparameters(epra, config)
         epra.sim.renderer.options.max_mesh_length_port = '4um'
@@ -195,7 +196,7 @@ def start_simulation(design, config, project_path):
     hfss = epra.sim.renderer
     print("Setting project name")
     hfss.options.project_path = project_path
-    hfss.options.project_name = f"clt_sweep_{config.uid}"
+    hfss.options.project_name = f"{config.comp_id}_clt_sweep_{config.uid}"
     hfss.start()
     hfss.new_ansys_design(config.design_name, config.sim_type)
     return epra, hfss

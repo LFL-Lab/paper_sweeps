@@ -36,3 +36,9 @@ project_storage/*.*
 *.asol
 *.aedt.auto
 *.aedt.lock
+
+*/*.aedt
+*/*.aedtresults
+*/*.asol
+*/*.aedt.auto
+*/*.aedt.lock

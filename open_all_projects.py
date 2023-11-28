@@ -1,3 +1,11 @@
+import sys
+
+ANSYS_WIN64_PATH = "D:\Program Files\ANSYS\AnsysEM21.1\Win64\\"
+ANSYS_PYTHON_PATH = "D:\Program Files\ANSYS\AnsysEM21.1\Win64\PythonFiles\DesktopPlugin\\"
+
+sys.path.append(ANSYS_WIN64_PATH)
+sys.path.append(ANSYS_PYTHON_PATH)
+
 import ScriptEnv
 import os
 
