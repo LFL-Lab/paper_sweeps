@@ -1,6 +1,7 @@
 # ----------------------------------------------
-# Script Recorded by ANSYS Electronics Desktop Version 2021.1.0
-# 14:07:10  Nov 27, 2023
+# Purpose:
+#	 1. Sets the Analysis Setup
+# 	2. Changes Si material properties
 # ----------------------------------------------
 import ScriptEnv
 import os
@@ -26,7 +27,7 @@ csvfile.close()  # Close the CSV file
 
 # Create new projects with names based on the UID
 for uid in uids:
-    # Define the full path for the new project using the UID
+	# Define the full path for the new project using the UID
 	print("Updating the Setup for " + uid + "\n")
 	oProject = oDesktop.SetActiveProject(uid)
 	oDesign = oProject.SetActiveDesign("CavitySweep_hfss")
@@ -54,4 +55,36 @@ for uid in uids:
 			"Target:="		, 0.4,
 			"UseMaxTetIncrease:="	, False
 		])
-	oProject.Save() #might not work
+	
+	print("Fixing the material properties of ultracold Si for " + uid + "\n")
+	oDefinitionManager = oProject.GetDefinitionManager()
+	oDefinitionManager.EditMaterial("silicon", 
+		[
+			"NAME:silicon",
+			"CoordinateSystemType:=", "Cartesian",
+			"BulkOrSurfaceType:="	, 1,
+			[
+				"NAME:PhysicsTypes",
+				"set:="			, ["Electromagnetic","Thermal","Structural"]
+			],
+			[
+				"NAME:AttachedData",
+				[
+					"NAME:MatAppearanceData",
+					"property_data:="	, "appearance_data",
+					"Red:="			, 89,
+					"Green:="		, 94,
+					"Blue:="		, 107
+				]
+			],
+			"permittivity:="	, "11.45",
+			"dielectric_loss_tangent:=", "1e-07",
+			"thermal_conductivity:=", "148",
+			"mass_density:="	, "2330",
+			"specific_heat:="	, "712",
+			"youngs_modulus:="	, "135000000000",
+			"poissons_ratio:="	, "0.25",
+			"thermal_expansion_coefficient:=", "2.54e-06"
+		])
+	print("Silicon material properties updated.")
+	oProject.Save()
