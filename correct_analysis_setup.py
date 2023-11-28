@@ -27,6 +27,7 @@ csvfile.close()  # Close the CSV file
 # Create new projects with names based on the UID
 for uid in uids:
     # Define the full path for the new project using the UID
+	print("Updating the Setup for " + uid + "\n")
 	oProject = oDesktop.SetActiveProject(uid)
 	oDesign = oProject.SetActiveDesign("CavitySweep_hfss")
 	oModule = oDesign.GetModule("AnalysisSetup")

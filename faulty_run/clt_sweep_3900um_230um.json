@@ -1,0 +1,67 @@
+{
+    "design_options": {
+        "coupling_type": "CLT",
+        "geometry_dict": {
+            "claw_opts": {
+                "connection_pads": {
+                    "readout": {
+                        "connector_location": "90",
+                        "connector_type": "0",
+                        "claw_length": "230um",
+                        "ground_spacing": "4.1um",
+                        "claw_gap": "5.1um",
+                        "claw_width": "15um",
+                        "claw_cpw_width": "11.7um",
+                        "claw_cpw_length": "0um"
+                    }
+                }
+            },
+            "cpw_opts": {
+                "fillet": "49.9um",
+                "total_length": "3900um",
+                "trace_width": "11.7um",
+                "trace_gap": "5.1um"
+            },
+            "cplr_opts": {
+                "prime_width": "11.7um",
+                "prime_gap": "5.1um",
+                "second_width": "11.7um",
+                "second_gap": "5.1um",
+                "coupling_space": "7.9um",
+                "coupling_length": "225um",
+                "open_termination": false,
+                "down_length": "50um"
+            }
+        }
+    },
+    "sim_options": {
+        "sim_type": "epr",
+        "setup": {
+            "sim_type": "epr",
+            "setup": {
+                "name": "Setup",
+                "reuse_selected_design": true,
+                "reuse_setup": true,
+                "min_freq_ghz": 1,
+                "n_modes": 1,
+                "max_delta_f": 0.05,
+                "max_passes": 50,
+                "min_passes": 1,
+                "min_converged": 1,
+                "pct_refinement": 30,
+                "basis_order": 1,
+                "vars": {
+                    "Lj": "0nH",
+                    "Cj": "0fF"
+                },
+                "min_converged_passes": 2
+            }
+        }
+    },
+    "sim_results": {
+        "cavity_frequency": 6.28001954366,
+        "Q": 102823.24209194447,
+        "kappa": 0.061075875608400006
+    },
+    "misc": {}
+}

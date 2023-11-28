@@ -7,7 +7,7 @@ import os
 ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
 
 # Specify the CSV file path
-csv_path = r"d:\andre\paper_sweeps\project_storage\uids.csv" #UPDATE THIS
+csv_path = r"d:\Andre\paper_sweeps\project_storage\uids.csv" #UPDATE THIS
 project_path = os.path.dirname(csv_path)
 
 # Read the UIDs from the CSV file

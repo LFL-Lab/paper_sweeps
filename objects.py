@@ -41,6 +41,7 @@ def CLT_epr_sweep(design, sweep_opts, project_path):
         # gui.autoscale()
         # Extract keys from the param dictionary and concatenate them
         uid_base = '_'.join([param["cpw_opts"]["total_length"], param["claw_opts"]["connection_pads"]["readout"]["claw_length"]])
+        uid_base = '_'.join([uid_base, param["cplr_opts"]["coupling_length"]])
 
         # Generate a UID with a datetime stamp
         #datetime_stamp = datetime.now().strftime("%Y%m%d%H%M%S")
