@@ -47,7 +47,7 @@ for uid in uids:
 				"NAME:MeshLink",
 				"ImportMesh:="		, False
 			],
-			"BasisOrder:="		, -1,
+			"BasisOrder:="		, 1,
 			"DoLambdaRefine:="	, True,
 			"DoMaterialLambda:="	, True,
 			"SetLambdaTarget:="	, False,
