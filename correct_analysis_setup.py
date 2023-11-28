@@ -29,7 +29,7 @@ def remove_lock_files(project_path):
     for lock_file in lock_files:
         try:
             os.remove(lock_file)
-            print("Deleted: " + "lock_file")
+            print("Deleted: " + lock_file)
         except OSError as e:
             print("Error: %s - %s." % (e.strerror, lock_file))
 
