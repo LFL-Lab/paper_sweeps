@@ -5,15 +5,19 @@
 # ----------------------------------------------
 import sys
 
+PAPER_SWEEP_PATH = "D:\Andre\paper_sweeps\\"
 ANSYS_WIN64_PATH = "D:\Program Files\ANSYS\AnsysEM21.1\Win64\\"
 ANSYS_PYTHON_PATH = "D:\Program Files\ANSYS\AnsysEM21.1\Win64\PythonFiles\DesktopPlugin\\"
 
 sys.path.append(ANSYS_WIN64_PATH)
 sys.path.append(ANSYS_PYTHON_PATH)
+sys.path.append(PAPER_SWEEP_PATH)
 
 import ScriptEnv
 import os
 import csv
+from utils import remove_lock_files
+
 
 ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
 oDesktop.RestoreWindow()
@@ -70,3 +74,5 @@ for uid in uids:
         ])
     print("Silicon material properties updated.")
     oProject.Save()
+
+remove_lock_files(project_path)

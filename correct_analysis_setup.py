@@ -5,28 +5,46 @@
 # ----------------------------------------------
 import sys
 
+PAPER_SWEEP_PATH = "D:\Andre\paper_sweeps\\"
 ANSYS_WIN64_PATH = "D:\Program Files\ANSYS\AnsysEM21.1\Win64\\"
 ANSYS_PYTHON_PATH = "D:\Program Files\ANSYS\AnsysEM21.1\Win64\PythonFiles\DesktopPlugin\\"
 
 sys.path.append(ANSYS_WIN64_PATH)
 sys.path.append(ANSYS_PYTHON_PATH)
+sys.path.append(PAPER_SWEEP_PATH)
 
 import ScriptEnv
 import os
 import csv
+import glob
+
+def remove_lock_files(project_path):
+    # Construct the pattern to match all '.lock' files
+    lock_files_pattern = os.path.join(project_path, '*.lock')
+
+    # Use glob to find all files in the directory that end with '.lock'
+    lock_files = glob.glob(lock_files_pattern)
+
+    # Iterate over the list of file paths & remove each file
+    for lock_file in lock_files:
+        try:
+            os.remove(lock_file)
+            print("Deleted: " + "lock_file")
+        except OSError as e:
+            print("Error: %s - %s." % (e.strerror, lock_file))
 
 ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
 oDesktop.RestoreWindow()
 
 # Specify the CSV file path
-csv_path = r"d:\andre\paper_sweeps\project_storage\uids.csv" #UPDATE THIS
-project_path = os.path.dirname(csv_path)
+CSV_PATH = r"d:\andre\paper_sweeps\project_storage\uids.csv" #UPDATE THIS
+project_path = os.path.dirname(CSV_PATH)
 
 # Read the UIDs from the CSV file
 uids = []
 
 # Open the CSV file and read the UIDs
-csvfile = open(csv_path, 'r')
+csvfile = open(CSV_PATH, 'r')
 csv_reader = csv.reader(csvfile)
 header = next(csv_reader)  # Skip the header
 for row in csv_reader:
@@ -36,6 +54,7 @@ csvfile.close()  # Close the CSV file
 # Create new projects with names based on the UID
 for uid in uids:
 	# Define the full path for the new project using the UID
+	print(50*"=")
 	print("Updating the Setup for " + uid + "\n")
 	oProject = oDesktop.SetActiveProject(uid)
 	oDesign = oProject.SetActiveDesign("CavitySweep_hfss")
@@ -64,7 +83,7 @@ for uid in uids:
 			"UseMaxTetIncrease:="	, False
 		])
 	
-	print("Fixing the material properties of ultracold Si for " + uid + "\n")
+	print("Fixing the material properties of ultracold Si for " + uid)
 	oDefinitionManager = oProject.GetDefinitionManager()
 	oDefinitionManager.EditMaterial("silicon", 
 		[
@@ -95,4 +114,8 @@ for uid in uids:
 			"thermal_expansion_coefficient:=", "2.54e-06"
 		])
 	print("Silicon material properties updated.")
+	print(50*"=")
+	print("\n\n")
 	oProject.Save()
+
+remove_lock_files(project_path)

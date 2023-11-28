@@ -8,80 +8,68 @@ sys.path.append(ANSYS_PYTHON_PATH)
 
 import ScriptEnv
 import os
-import csv
+import subprocess
 import time
+import logging
+from tqdm import tqdm
 
+# Initialize logging
+logging.basicConfig(filename='simulation_log.log', level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Initialize the Electronics Desktop environment
 ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
-oDesktop.RestoreWindow()
+oDesktop = ScriptEnv.GetDesktop()
 
-# Function to start a simulation for a given UID
-def start_simulation(uid, project_path, design_name, setup_name):
-    try:
-        oProject = oDesktop.SetActiveProject(uid)
-        oDesign = oProject.SetActiveDesign(design_name)
-        oDesign.Analyze(setup_name)
-        print("Simulation started for " + uid + ".")
-    except Exception as e:
-        print("Error in starting simulation for " + uid + ": " + str(e))
 
 # Function to check if a simulation is completed
-def is_simulation_completed(uid, project_path):
-    return os.path.exists(os.path.join(project_path, uid + ".aedt.q.completed"))
+def is_simulation_completed(uid, project_path, completion_file_suffix):
+    return os.path.exists(os.path.join(project_path, uid + completion_file_suffix))
 
-# Function to save and close a project
-def save_and_close_project(uid, project_path):
-    try:
-        oProject = oDesktop.OpenProject(os.path.join(project_path, uid + ".aedt"))
-        oProject.Save()
-        oProject.Close()
-        print("Project for " + uid + " saved and closed.")
-    except Exception as e:
-        print("Error in saving and closing project for " + uid + ": " + str(e))
 
-# Main function to control the simulation queue
-def main(csv_path, num_sims, design_name, setup_name, wait_time_mins):
-    project_path = os.path.dirname(csv_path)
-    uids = []
+# Main function to manage simulations
+def main(project_directory, num_sims, check_interval_mins, completion_file_suffix):
+    project_files = [f for f in os.listdir(project_directory) if f.endswith('.aedt')]
 
-    # Read UIDs from the CSV file
-    with open(csv_path, 'r') as csvfile:
-        csv_reader = csv.reader(csvfile)
-        next(csv_reader)  # Skip the header
-        for row in csv_reader:
-            uids.append(row[0])
+    with tqdm(total=len(project_files)) as pbar:
+        active_sims = []
+        for project_file in project_files:
+            project_path = os.path.join(project_directory, project_file)
+            uid = os.path.splitext(project_file)[0]  # Extract UID from file name
 
-    # Iterate over UIDs and manage simulation queue
-    active_sims = []
-    for uid in uids:
-        if len(active_sims) < num_sims:
-            start_simulation(uid, project_path, design_name, setup_name)
-            active_sims.append(uid)
-        else:
+            # Wait if maximum simulations are running
             while len(active_sims) >= num_sims:
-                for sim_uid in active_sims[:]:
-                    if is_simulation_completed(sim_uid, project_path):
-                        save_and_close_project(sim_uid, project_path)
-                        active_sims.remove(sim_uid)
-                        print("Simulation for " + sim_uid + " completed.")
-                time.sleep(wait_time_mins * 60)  # Check every specified minutes
+                completed_sims = [sim_uid for sim_uid in active_sims if
+                                  not is_simulation_completed(sim_uid, project_directory, completion_file_suffix)]
+                for sim_uid in completed_sims:
+                    active_sims.remove(sim_uid)
+                    logging.info(f"Simulation completed for {sim_uid}")
+                    pbar.update(1)
+                time.sleep(check_interval_mins * 60)  # Check every specified minutes
 
-    # Wait for the remaining simulations to complete
-    while active_sims:
-        for sim_uid in active_sims[:]:
-            if is_simulation_completed(sim_uid, project_path):
-                save_and_close_project(sim_uid, project_path)
+            # Start a new simulation
+            subprocess.Popen(["C:\\path\\to\\ansysedt.exe", "-RunScriptAndExit", project_path])
+            active_sims.append(uid)
+            logging.info(f"Simulation started for {uid}")
+
+        # Wait for all simulations to complete
+        while active_sims:
+            completed_sims = [sim_uid for sim_uid in active_sims if
+                              not is_simulation_completed(sim_uid, project_directory, completion_file_suffix)]
+            for sim_uid in completed_sims:
                 active_sims.remove(sim_uid)
-                print("Simulation for " + sim_uid + " completed.")
-        time.sleep(wait_time_mins * 60)  # Check every specified minutes
+                logging.info(f"Simulation completed for {sim_uid}")
+                pbar.update(1)
+            time.sleep(check_interval_mins * 60)
 
-    print("All simulations completed.")
+        logging.info("All simulations completed.")
 
-# Specify the parameters
-csv_path = r"d:\andre\paper_sweeps\project_storage\uids.csv"  # UPDATE THIS
-num_sims = 3  # UPDATE THIS
-design_name = "CavitySweep_hfss"  # UPDATE THIS IF NEEDED
-setup_name = "Setup"  # UPDATE THIS IF NEEDED
-wait_time_mins = 20  # UPDATE THIS IF NEEDED
+
+# Parameters
+project_directory = r"D:\path\to\project\files"  # Update this path
+num_sims = 3  # Number of simultaneous simulations
+check_interval_mins = 20  # Time interval for checking simulation completion
+completion_file_suffix = ".aedt.q.completed"  # Suffix for the completion check file
 
 # Run the main function
-main(csv_path, num_sims, design_name, setup_name, wait_time_mins)
+main(project_directory, num_sims, check_interval_mins, completion_file_suffix)

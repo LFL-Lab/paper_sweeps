@@ -1,15 +1,15 @@
 """Create a new project"""
 import sys
 
-ANSYS_WIN64_PATH = "D:\Program Files\ANSYS\AnsysEM21.1\Win64\\"
-ANSYS_PYTHON_PATH = "D:\Program Files\ANSYS\AnsysEM21.1\Win64\PythonFiles\DesktopPlugin\\"
 
 sys.path.append(ANSYS_WIN64_PATH)
 sys.path.append(ANSYS_PYTHON_PATH)
+sys.path.append(PAPER_SWEEP_PATH)
 
 import ScriptEnv
 import csv
 import os
+from utils import remove_lock_files
 
 # Initialize the Electronics Desktop environment
 ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
@@ -37,3 +37,5 @@ for uid in uids:
     oDesktop.RestoreWindow()
     oProject = oDesktop.NewProject(project_full_path)
     oProject.SaveAs(project_full_path, True)
+
+remove_lock_files(project_path)
