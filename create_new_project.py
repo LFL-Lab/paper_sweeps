@@ -1,6 +1,10 @@
 """Create a new project"""
 import sys
-
+"""
+=========================
+CHANGE THESE PATHS
+=========================
+"""
 PAPER_SWEEP_PATH = "D:\Andre\paper_sweeps\\"
 ANSYS_WIN64_PATH = "D:\Program Files\ANSYS\AnsysEM21.1\Win64\\"
 ANSYS_PYTHON_PATH = "D:\Program Files\ANSYS\AnsysEM21.1\Win64\PythonFiles\DesktopPlugin\\"
@@ -33,7 +37,7 @@ def remove_lock_files(project_path):
 ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
 
 # Specify the CSV file path
-csv_path = r"d:\Andre\paper_sweeps\project_storage\uids.csv" #UPDATE THIS
+csv_path = PAPER_SWEEP_PATH + "project_storage\uids.csv"
 project_path = os.path.dirname(csv_path)
 
 # Read the UIDs from the CSV file

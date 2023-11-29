@@ -5,6 +5,11 @@
 # ----------------------------------------------
 import sys
 
+"""
+=========================
+CHANGE THESE PATHS
+=========================
+"""
 PAPER_SWEEP_PATH = "D:\Andre\paper_sweeps\\"
 ANSYS_WIN64_PATH = "D:\Program Files\ANSYS\AnsysEM21.1\Win64\\"
 ANSYS_PYTHON_PATH = "D:\Program Files\ANSYS\AnsysEM21.1\Win64\PythonFiles\DesktopPlugin\\"

@@ -1,0 +1,20 @@
+ 
+ANSYS Electronics Desktop Version 2021.1.0, Build: 2020-11-16 21:49:12
+Location: D:\Program Files\ANSYS\AnsysEM21.1\Win64\ansysedt.exe
+Batch Script: D:/Andre/paper_sweeps/run_single_simulation.py
+Starting Batch Run: 4:34:44 PM  Nov 28, 2023
+Running as user: DTS\lfl
+Unexpected command line argument 'Saruman_clt_sweep_3830um_205um_225um' ignored.
+Temp directory: D:\ProgramData\Temp
+Project directory: D:\lfl\Documents\Ansoft
+[error] Access to D:/Andre/paper_sweeps/project_storage was denied.
+[warning] Loading project failed: D:/Andre/paper_sweeps/project_storage.
+[Exiting application]
+
+Running as user: DTS\lfl
+Unexpected command line argument 'Saruman_clt_sweep_3830um_205um_240um' ignored.
+Temp directory: D:\ProgramData\Temp
+Project directory: D:\lfl\Documents\Ansoft
+[error] Access to D:/Andre/paper_sweeps/project_storage was denied.
+[warning] Loading project failed: D:/Andre/paper_sweeps/project_storage.
+[Exiting application]
